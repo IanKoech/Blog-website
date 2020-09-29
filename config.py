@@ -16,7 +16,7 @@ class Config:
     SIMPLEMDE_JS_IIFE = True
     SIMPLEMDE_USE_CDN = True
 
-#Removed test class
+#Removed
 
 class ProdConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
@@ -28,6 +28,6 @@ class DevConfig(Config):
 
 config_options = {
 'development': DevConfig,
-'production': ProdConfig,
-'test':TestConfig
+'production': ProdConfig
+#'test':TestConfig
 }        
