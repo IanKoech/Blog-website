@@ -16,14 +16,13 @@ class Config:
     SIMPLEMDE_JS_IIFE = True
     SIMPLEMDE_USE_CDN = True
 
-class TestConfig:
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa-student:ms@localhost/blog_test'
+#Removed test class
 
 class ProdConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa-student:ms@localhost/blog'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://ian:iankoech@localhost/blog'
 
     DEBUG = True
 
