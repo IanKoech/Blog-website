@@ -1,4 +1,4 @@
-## Pitch
+## Blog- Webpage
 
 This is a web application that allows users to sign into their accounts and make blogs on different fields and also comment on blogs
 
