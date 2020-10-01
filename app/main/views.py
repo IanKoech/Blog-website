@@ -1,20 +1,18 @@
-from flask import render_template,redirect,url_for,abort
+from flask import render_template,redirect,url_for,abort,request
 from . import main
 from . forms import CommentForm,UpdateProfile,BlogForm
 from ..models import Comment, User, Blog
+from ..requests import get_quotes
 from flask_login import login_required, current_user
 from .. import db,photos
 import markdown2  
 
 @main.route('/')
 def index():
-    '''
-    function that returns the index page and its data
-    '''
-
-    title = 'Blog Post'
-
-    return render_template('index.html', title = title)
+    quotes = get_quotes()
+    page = request.args.get('page',1, type = int )
+    blogs = Blog.query.order_by(Blog.posted.desc()).paginate(page = page, per_page = 3)
+    return render_template('index.html', quote = quotes,blogs=blogs)
 
 @main.route('/blog', methods=['GET','POST'])
 @login_required

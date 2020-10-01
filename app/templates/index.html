@@ -23,12 +23,12 @@
             <div style="text-align:center;background-color: rgb(13, 14, 28);font-size: smaller;">
                 <img class="card-img-top" class="center">
                     <div class="card-body">
-                  <h5 class="card-title">Yours Truly</h5>
+                  <h5 class="card-title">Hello User :)</h5>
                   <p class="card-text">This application allows users to write and post their blogs.</p>
                 </div>
                 <div>
-                    <a href="/blog" class="btn btn-primary">New Blog</a>
-                    <a href="/comment" class="btn btn-primary">Comment</a>
+                    <a href="{{url_for('main.new_blog',id=blogs.id)}}" class="btn btn-primary">New Blog</a>
+                    
                 </div>
             </div>
         </div>    
@@ -36,7 +36,13 @@
         
 
         <div class="col-md-4">
-            
+            <blockquote class="quote-box text-center primary-color">
+                <div class="card cardquote">
+                    <div class="card-title">
+                        <h4>A quote by: <span style="color:seagreen">{{quote.author}}</span> </h4>
+                    </div>
+                    <p class="card-text">{{quote.quote}}</p>
+                </div>
             </blockquote>
         </div>
     </div>
