@@ -47,7 +47,6 @@ Deployed on Heroku
 
 #### Known Bugs
 
- Cannot successfully create a user account
 
  Failed to successfully deploy on heroku
 
