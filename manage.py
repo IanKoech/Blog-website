@@ -4,7 +4,8 @@ from app.models import User,Blog , Comment
 from  flask_migrate import Migrate, MigrateCommand
 
 #creating an app instance
-app = create_app('development')
+app = create_app('production')
+
 # app = create_app('production')
 # app = create_app('test')
 
